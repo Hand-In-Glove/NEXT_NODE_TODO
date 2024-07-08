@@ -2,6 +2,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { Todo } from '../models/todo.model';
 import { getDb } from '../db';
 
+/**
+ * NOTE: SQLlite doesn't recognise boolean data and only stores integer value 1 or 0
+ * so where we are writing or reading this data in the service a conversion happens.
+ */
 export class TodoService {
   public async createTodo(title: string, content: string): Promise<Todo> {
     const db = getDb();
