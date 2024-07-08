@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 28, 29, 33;
+	--highlight-rgb: 255, 255, 255;
+	--background-start-rgb: 241, 227, 228;
+	--background-end-rgb: 162, 136, 166;
+	--background-action-rgb: 0, 217, 192;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 28, 29, 33;
+		--highlight-rgb: 255, 255, 255;
+		--background-start-rgb: 241, 227, 228;
+		--background-end-rgb: 162, 136, 166;
+		--background-action-rgb: 0, 217, 192;
+	}
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
+}
+
+main {
+	color: rgb(--foreground-rgb);
+}
+
+nav {
+	color: rgb(var(--highlight-rgb));
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+p {
+	margin: 1rem 0;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+.link-button {
+	width: 100%;
+	background: #2c4359;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.25rem;
+	padding: 2rem;
+	border: 1px solid aliceblue;
+	color: rgb(var(--highlight-rgb));
+}
+
+.action {
+	background: var(--background-action-rgb);
+}
